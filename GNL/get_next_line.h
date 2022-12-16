@@ -1,26 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.c                                          :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/12 01:03:43 by zasabri           #+#    #+#             */
-/*   Updated: 2022/12/16 22:35:35 by zasabri          ###   ########.fr       */
+/*   Created: 2022/11/03 20:00:57 by zasabri           #+#    #+#             */
+/*   Updated: 2022/11/06 21:58:11 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
-#include "../libft/libft.h"
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 
-int	main(void)
-{
-	t_moves param;
+# include <fcntl.h>
+# include <stdio.h>
+# include <stdlib.h>
+# include <unistd.h>
 
-	param.moves_number = 0;
-	param.mlx= mlx_init();
-	param.win = mlx_new_window(param.mlx, 500, 500, "game");
-	ft_show(&param);
-	mlx_key_hook(param.win, moves, &param);
-	mlx_loop(param.mlx);
-}
+char	*get_next_line(int fd);
+int		ft_strlen(char *str);
+char	*ft_strchr(char *str, int c);
+char	*ft_strjoin(char *s1, char *s2);
+char	*buffer_to_stock(int fd, char *stock);
+char	*ft_pre_save(char *stock);
+char	*ft_sec_save(char *stock);
+#endif

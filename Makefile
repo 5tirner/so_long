@@ -6,11 +6,12 @@
 #    By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/16 02:03:17 by zasabri           #+#    #+#              #
-#    Updated: 2022/12/16 02:37:37 by zasabri          ###   ########.fr        #
+#    Updated: 2022/12/16 22:35:51 by zasabri          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRSC	= help_function.c\
+		so_long.c
 		../libft/ft_itoa.c\
 	
 OBJS	= $(SRSC:.c=.o)

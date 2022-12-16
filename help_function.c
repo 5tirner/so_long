@@ -6,7 +6,7 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 01:04:10 by zasabri           #+#    #+#             */
-/*   Updated: 2022/12/16 04:35:05 by zasabri          ###   ########.fr       */
+/*   Updated: 2022/12/16 22:34:45 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,16 +79,4 @@ int	moves(int key, t_moves *param)
 		mlx_string_put(param->mlx, param->win, 10, 15, 0xFFFFF0, ft_itoa(param->moves_number));
 	}
 	return (0);
-}
-
-int	main(void)
-{
-	t_moves param;
-
-	param.moves_number = 0;
-	param.mlx= mlx_init();
-	param.win = mlx_new_window(param.mlx, 500, 500, "game");
-	ft_show(&param);
-	mlx_key_hook(param.win, moves, &param);
-	mlx_loop(param.mlx);
 }

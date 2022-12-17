@@ -6,7 +6,7 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 02:27:42 by zasabri           #+#    #+#             */
-/*   Updated: 2022/12/17 03:08:53 by zasabri          ###   ########.fr       */
+/*   Updated: 2022/12/17 04:49:47 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,4 +36,7 @@ int		moves(int key, t_moves *param);
 void	ft_checkmap(t_moves *param, char **av);
 size_t	ft_strlen(const char *s);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
+void	check_first_last_lines(char *first, char *last, char *av);
+int	ft_cw(const char *str, char c);
+void	error_generat(char *av);
 #endif

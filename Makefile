@@ -6,7 +6,7 @@
 #    By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/16 02:03:17 by zasabri           #+#    #+#              #
-#    Updated: 2022/12/17 04:06:57 by zasabri          ###   ########.fr        #
+#    Updated: 2022/12/17 04:54:18 by zasabri          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,10 +16,12 @@ SRSC	= help_function.c\
 		ft_validation.c\
 		./libft/ft_strnstr.c\
 		./libft/ft_strlen.c\
+		./libft/ft_split.c\
 		get_next_line.c\
 		get_next_line_utils.c\
 		./libft/ft_calloc.c\
 		./libft/ft_bzero.c\
+		ft_print_error.c\
 	
 OBJS	= $(SRSC:.c=.o)
 

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_map.c                                        :+:      :+:    :+:   */
+/*   ft_validation.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/16 23:43:45 by zasabri           #+#    #+#             */
-/*   Updated: 2022/12/17 03:58:09 by zasabri          ###   ########.fr       */
+/*   Created: 2022/12/17 04:07:25 by zasabri           #+#    #+#             */
+/*   Updated: 2022/12/17 04:30:30 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	ft_check_map_body(char *str, char *av)
 	int i;
 
 	i = 0;
-	if (str[0] == '\n')
+	if (str[0] != '1')
 		error_generat(av);
 	while (str[i])
 	{
@@ -36,6 +36,8 @@ void	ft_check_map_body(char *str, char *av)
 			error_generat(av);
 		i++;
 	}
+	if (str[i - 1] != '1')
+		error_generat(av);
 }
 
 void	ft_check_map_look(char *str, char *av)
@@ -50,6 +52,9 @@ void	ft_check_map_look(char *str, char *av)
 	len = i;
 	while (str[i])
 	{
+		if (str[i] == '\n'
+		&& (str[i - 1] != '1' || str[i + 1] != '1'))
+			error_generat(av);
 		i++;
 		j = 0;
 		while (str[i] && str[i] != '\n')
@@ -57,7 +62,6 @@ void	ft_check_map_look(char *str, char *av)
 			i++;
 			j++;
 		}
-		printf("%d----%d\n", len, j);
 		if (j != len)
 			error_generat(av);
 	}

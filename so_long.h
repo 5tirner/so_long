@@ -6,7 +6,7 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 02:27:42 by zasabri           #+#    #+#             */
-/*   Updated: 2022/12/16 03:27:53 by zasabri          ###   ########.fr       */
+/*   Updated: 2022/12/17 03:08:53 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,9 @@
 # include <stdio.h>
 # include <unistd.h>
 # include <mlx.h>
+# include <fcntl.h>
+# include "./libft/libft.h"
+# include "get_next_line.h"
 
 typedef struct s_moves
 {
@@ -23,8 +26,14 @@ typedef struct s_moves
 	void	*mlx;
 	void	*win;
 	void	*img;
+	int		fd;
+	char	**map_look;
 }		t_moves;
 
 char	*ft_itoa(int nb);
+void	ft_show(t_moves *param);
 int		moves(int key, t_moves *param);
+void	ft_checkmap(t_moves *param, char **av);
+size_t	ft_strlen(const char *s);
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 #endif

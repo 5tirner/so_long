@@ -6,11 +6,10 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 01:04:10 by zasabri           #+#    #+#             */
-/*   Updated: 2022/12/16 22:34:45 by zasabri          ###   ########.fr       */
+/*   Updated: 2022/12/16 23:45:03 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft/libft.h"
 #include "so_long.h"
 
 void	ft_show(t_moves *param)

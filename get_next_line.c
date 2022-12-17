@@ -6,7 +6,7 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 13:38:17 by zasabri           #+#    #+#             */
-/*   Updated: 2022/11/08 20:34:06 by zasabri          ###   ########.fr       */
+/*   Updated: 2022/12/17 01:20:27 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ char	*buffer_to_stock(int fd, char *stock)
 	if (!buff)
 		return (NULL);
 	i = 1;
-	while (!ft_strchr(stock, '\n') && i != 0)
+	while (!ft_strch(stock, '\n') && i != 0)
 	{
 		i = read(fd, buff, BUFFER_SIZE);
 		if (i == -1)
@@ -35,7 +35,7 @@ char	*buffer_to_stock(int fd, char *stock)
 			return (stock);
 		}
 		buff[i] = '\0';
-		stock = ft_strjoin(stock, buff);
+		stock = ft_strj(stock, buff);
 	}
 	free(buff);
 	return (stock);

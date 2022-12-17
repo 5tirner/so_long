@@ -6,7 +6,7 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 20:00:57 by zasabri           #+#    #+#             */
-/*   Updated: 2022/11/06 21:58:11 by zasabri          ###   ########.fr       */
+/*   Updated: 2022/12/17 01:15:10 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@
 # include <unistd.h>
 
 char	*get_next_line(int fd);
-int		ft_strlen(char *str);
-char	*ft_strchr(char *str, int c);
-char	*ft_strjoin(char *s1, char *s2);
+int		ft_strl(char *str);
+char	*ft_strch(char *str, int c);
+char	*ft_strj(char *s1, char *s2);
 char	*buffer_to_stock(int fd, char *stock);
 char	*ft_pre_save(char *stock);
 char	*ft_sec_save(char *stock);

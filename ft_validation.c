@@ -6,7 +6,7 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/17 04:07:25 by zasabri           #+#    #+#             */
-/*   Updated: 2022/12/18 00:06:46 by zasabri          ###   ########.fr       */
+/*   Updated: 2022/12/18 05:01:37 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_check_map_body(char *str, char *av)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (str[0] != '1')
@@ -22,7 +22,7 @@ void	ft_check_map_body(char *str, char *av)
 	while (str[i])
 	{
 		if (str[i] != '0' && str[i] != '1' && str[i] != 'P'
-		&& str[i] != 'C' && str[i] != 'E' && str[i] != '\n')
+			&& str[i] != 'C' && str[i] != 'E' && str[i] != '\n')
 			error_generat(av);
 		if (str[i] == '\n' && str[i + 1] == '\n')
 			error_generat(av);
@@ -36,8 +36,8 @@ void	ft_check_map_look(char *str, char *av)
 {
 	int	len;
 	int	i;
-	int j;
-	
+	int	j;
+
 	i = 0;
 	while (str[i] && str[i] != '\n')
 		i++;
@@ -45,7 +45,7 @@ void	ft_check_map_look(char *str, char *av)
 	while (str[i])
 	{
 		if (str[i] == '\n'
-		&& (str[i - 1] != '1' || str[i + 1] != '1'))
+			&& (str[i - 1] != '1' || str[i + 1] != '1'))
 			error_generat(av);
 		i++;
 		j = 0;
@@ -61,11 +61,11 @@ void	ft_check_map_look(char *str, char *av)
 
 void	ft_check_elements(char *str, char *av)
 {
-	int i;
-	int p;
-	int e;
-	int c;
-	
+	int	i;
+	int	p;
+	int	e;
+	int	c;
+
 	i = 0;
 	p = 0;
 	e = 0;
@@ -103,7 +103,6 @@ void	check_first_last_lines(char **map_str, char *av)
 			error_generat(av);
 		j++;
 	}
-	printf("%s\n", map_str[i-1]);
 	j = 0;
 	while (map_str[i - 1][j])
 	{
@@ -118,9 +117,9 @@ void	ft_checkmap(t_moves *param, char **av)
 	char	*line;
 	char	*map_str;
 	char	**map_str2;
-	
+
 	map_str = ft_calloc(1, 1);
-	if (ft_strnstr(av[1] , ".ber", ft_strlen(av[1])) == 0)
+	if (ft_strnstr(av[1], ".ber", ft_strlen(av[1])) == 0)
 		error_generat(av[1]);
 	param->fd = open(av[1], O_RDONLY, 0777);
 	line = get_next_line(param->fd);
@@ -131,6 +130,7 @@ void	ft_checkmap(t_moves *param, char **av)
 		map_str = ft_strj(map_str, line);
 		line = get_next_line(param->fd);
 	}
+	printf("%s\n", map_str);
 	ft_check_map_body(map_str, av[1]);
 	ft_check_map_look(map_str, av[1]);
 	ft_check_elements(map_str, av[1]);

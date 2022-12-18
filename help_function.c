@@ -6,7 +6,7 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 01:04:10 by zasabri           #+#    #+#             */
-/*   Updated: 2022/12/16 23:45:03 by zasabri          ###   ########.fr       */
+/*   Updated: 2022/12/18 03:50:16 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,43 +39,6 @@ void	ft_show(t_moves *param)
 		}
 		j++;
 	}
-	param->img = mlx_xpm_file_to_image(param->mlx, "image.xpm", &x, &y);
+	param->img = mlx_xpm_file_to_image(param->mlx, "./pic/back.xpm", &x, &y);
 	mlx_put_image_to_window(param->mlx, param->win, param->img, 100, 100);
-}
-
-int	moves(int key, t_moves *param)
-{
-	if (key == 126 || key == 13)
-	{
-		param->moves_number++;
-		printf("move number %d: up\n", param->moves_number);
-		mlx_clear_window(param->mlx, param->win);
-		ft_show(param);
-		mlx_string_put(param->mlx, param->win, 10, 15, 0xFFFFF0, ft_itoa(param->moves_number));
-	}
-	if (key == 125 || key == 1)
-	{
-		param->moves_number++;
-		printf("move number %d: down\n", param->moves_number);
-		mlx_clear_window(param->mlx, param->win);
-		ft_show(param);
-		mlx_string_put(param->mlx, param->win, 10, 15, 0xFFFFF0, ft_itoa(param->moves_number));
-	}
-	if (key == 124 || key == 2)
-	{
-		param->moves_number++;
-		printf("move number %d: right\n", param->moves_number);
-		mlx_clear_window(param->mlx, param->win);
-		ft_show(param);
-		mlx_string_put(param->mlx, param->win, 10, 15, 0xFFFFF0, ft_itoa(param->moves_number));
-	}
-	if (key == 123 || key == 0)
-	{
-		param->moves_number++;
-		printf("move number %d: left\n", param->moves_number);
-		mlx_clear_window(param->mlx, param->win);
-		ft_show(param);
-		mlx_string_put(param->mlx, param->win, 10, 15, 0xFFFFF0, ft_itoa(param->moves_number));
-	}
-	return (0);
 }

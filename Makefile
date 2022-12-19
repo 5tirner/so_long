@@ -6,7 +6,7 @@
 #    By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/16 02:03:17 by zasabri           #+#    #+#              #
-#    Updated: 2022/12/18 23:04:31 by zasabri          ###   ########.fr        #
+#    Updated: 2022/12/19 12:11:26 by zasabri          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,6 +25,7 @@ SRSC	= help_function.c\
 		ft_moves.c\
 		map_size.c\
 		ft_graphic_map.c\
+		ft_check_acces.c\
 	
 OBJS	= $(SRSC:.c=.o)
 

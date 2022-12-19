@@ -6,7 +6,7 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/17 04:07:25 by zasabri           #+#    #+#             */
-/*   Updated: 2022/12/18 05:01:37 by zasabri          ###   ########.fr       */
+/*   Updated: 2022/12/18 23:01:24 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,7 +130,6 @@ void	ft_checkmap(t_moves *param, char **av)
 		map_str = ft_strj(map_str, line);
 		line = get_next_line(param->fd);
 	}
-	printf("%s\n", map_str);
 	ft_check_map_body(map_str, av[1]);
 	ft_check_map_look(map_str, av[1]);
 	ft_check_elements(map_str, av[1]);

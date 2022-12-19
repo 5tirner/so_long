@@ -6,7 +6,7 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 02:27:42 by zasabri           #+#    #+#             */
-/*   Updated: 2022/12/18 05:44:21 by zasabri          ###   ########.fr       */
+/*   Updated: 2022/12/18 23:14:44 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,4 +41,5 @@ void	error_generat(char *av);
 int		moves(int key, t_moves *param);
 int		ft_map_3ord(char *str_map);
 int		ft_map_tol(char	*str);
+void	ft_graphic_map(t_moves *param, char *av);
 #endif

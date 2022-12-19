@@ -6,7 +6,7 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 01:03:43 by zasabri           #+#    #+#             */
-/*   Updated: 2022/12/18 05:52:50 by zasabri          ###   ########.fr       */
+/*   Updated: 2022/12/19 00:16:39 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ int	main(int ac, char **av)
 		param.mv_nb = 0;
 		ft_checkmap(&param, av);
 		param.mlx = mlx_init();
-		param.win = mlx_new_window(param.mlx, ft_map_3ord(av),ft_map_tol(av), "game");
-		ft_show(&param);
+		param.win = mlx_new_window(param.mlx, ft_map_3ord(av[1]), ft_map_tol(av[1]), "game");
+		ft_graphic_map(&param, av[1]);
 		mlx_key_hook(param.win, moves, &param);
 		mlx_loop(param.mlx);
 	}

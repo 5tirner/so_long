@@ -6,7 +6,7 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 02:27:42 by zasabri           #+#    #+#             */
-/*   Updated: 2022/12/19 02:39:46 by zasabri          ###   ########.fr       */
+/*   Updated: 2022/12/19 04:33:55 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ typedef struct s_moves
 	void	*ground;
 	void	*exit;
 	void	*coin;
+	int		k;
+	int		l;
 }	t_moves;
 
 char	*ft_itoa(int nb);

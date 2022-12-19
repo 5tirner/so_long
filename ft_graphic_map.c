@@ -6,7 +6,7 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/18 04:01:35 by zasabri           #+#    #+#             */
-/*   Updated: 2022/12/19 03:54:11 by zasabri          ###   ########.fr       */
+/*   Updated: 2022/12/19 04:44:11 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ void	ft_fill_map(t_moves *param, char *map)
 	i = 0;
 	k = 0;
 	l = 0;
-	printf("%s\n", map);
 	while(map[i])
 	{
 		if (map[i] == 'P')
@@ -57,6 +56,7 @@ void	ft_fill_map(t_moves *param, char *map)
 		{
 			k += 100;
 			l = 0;
+			i++;
 		}
 	}
 }

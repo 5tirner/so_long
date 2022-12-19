@@ -6,7 +6,7 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 02:27:42 by zasabri           #+#    #+#             */
-/*   Updated: 2022/12/18 23:14:44 by zasabri          ###   ########.fr       */
+/*   Updated: 2022/12/19 02:39:46 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,15 @@ typedef struct s_moves
 	void	*img;
 	int		fd;
 	char	*map_saver;
+	void	*wall;
+	void	*player;
+	void	*ground;
+	void	*exit;
+	void	*coin;
 }	t_moves;
 
 char	*ft_itoa(int nb);
 void	ft_show(t_moves *param);
-int		moves(int key, t_moves *param);
 void	ft_checkmap(t_moves *param, char **av);
 size_t	ft_strlen(const char *s);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);

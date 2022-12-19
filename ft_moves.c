@@ -6,7 +6,7 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/18 03:49:40 by zasabri           #+#    #+#             */
-/*   Updated: 2022/12/18 23:24:35 by zasabri          ###   ########.fr       */
+/*   Updated: 2022/12/19 02:18:34 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ void	ft_up_move(t_moves *p)
 	p->mv_nb++;
 	printf("move number %d: up\n", p->mv_nb);
 	mlx_clear_window(p->mlx, p->win);
-	ft_show(p);
 	mlx_string_put(p->mlx, p->win, 10, 15, 0xFFFFF0, ft_itoa(p->mv_nb));
 }
 

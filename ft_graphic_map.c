@@ -6,13 +6,11 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/18 04:01:35 by zasabri           #+#    #+#             */
-/*   Updated: 2022/12/19 00:13:12 by zasabri          ###   ########.fr       */
+/*   Updated: 2022/12/19 03:54:11 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-#include "get_next_line.h"
-#include "./libft/libft.h"
 
 void	ft_fill_map(t_moves *param, char *map)
 {
@@ -25,36 +23,41 @@ void	ft_fill_map(t_moves *param, char *map)
 	i = 0;
 	k = 0;
 	l = 0;
+	printf("%s\n", map);
 	while(map[i])
 	{
 		if (map[i] == 'P')
 		{
-			param->img = mlx_xpm_file_to_image(param->mlx, "./pic/face.xpm", &x, &y);
-			mlx_put_image_to_window(param->mlx, param->win, param->img, l, k);
+			param->player = mlx_xpm_file_to_image(param->mlx, "./pic/p_face.xpm", &x, &y);
+			mlx_put_image_to_window(param->mlx, param->win, param->player, l, k);
 		}
 		if (map[i] == 'E')
 		{
-			param->img = mlx_xpm_file_to_image(param->mlx, "./pic/closed.xpm", &x, &y);
-			mlx_put_image_to_window(param->mlx, param->win, param->img, l, k);
+			param->exit = mlx_xpm_file_to_image(param->mlx, "./pic/cl_door.xpm", &x, &y);
+			mlx_put_image_to_window(param->mlx, param->win, param->exit, l, k);
 		}
 		if (map[i] == 'C')
 		{
-			param->img = mlx_xpm_file_to_image(param->mlx, "./pic/coin1.xpm", &x, &y);
-			mlx_put_image_to_window(param->mlx, param->win, param->img, l, k);
+			param->coin = mlx_xpm_file_to_image(param->mlx, "./pic/coin1.xpm", &x, &y);
+			mlx_put_image_to_window(param->mlx, param->win, param->coin, l, k);
 		}
 		if (map[i] == '1')
 		{
-			param->img = mlx_xpm_file_to_image(param->mlx, "./pic/wall.xpm", &x, &y);
-			mlx_put_image_to_window(param->mlx, param->win, param->img, l, k);
+			param->wall = mlx_xpm_file_to_image(param->mlx, "./pic/wall.xpm", &x, &y);
+			mlx_put_image_to_window(param->mlx, param->win, param->wall, l, k);
 		}
 		if (map[i] == '0')
 		{
-			param->img = mlx_xpm_file_to_image(param->mlx, "./pic/ground.xpm", &x, &y);
-			mlx_put_image_to_window(param->mlx, param->win, param->img, l, k);
+			param->ground = mlx_xpm_file_to_image(param->mlx, "./pic/ground.xpm", &x, &y);
+			mlx_put_image_to_window(param->mlx, param->win, param->ground, l, k);
 		}
 		i++;
-		k += 100;
 		l += 100;
+		if (map[i] == '\n')
+		{
+			k += 100;
+			l = 0;
+		}
 	}
 }
 void	ft_graphic_map(t_moves *param, char *av)

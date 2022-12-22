@@ -6,18 +6,18 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/18 05:41:25 by zasabri           #+#    #+#             */
-/*   Updated: 2022/12/18 22:18:01 by zasabri          ###   ########.fr       */
+/*   Updated: 2022/12/22 11:34:33 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	ft_map_3ord(char *av)
+int	ft_width(char *av)
 {
-	int	i;
+	int		i;
 	char	*str;
 	char	*str_map;
-	int fd;
+	int		fd;
 
 	str_map = ft_calloc(1, 1);
 	fd = open(av, O_RDONLY, 0777);
@@ -33,13 +33,13 @@ int	ft_map_3ord(char *av)
 	return (100 * i);
 }
 
-int	ft_map_tol(char *av)
+int	ft_l(char *av)
 {
 	char	*str;
 	char	*str_map;
 	char	**str_map2;
-	int	i;
-	int fd;
+	int		i;
+	int		fd;
 
 	str_map = ft_calloc(1, 1);
 	fd = open(av, O_RDONLY, 0777);

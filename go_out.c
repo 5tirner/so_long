@@ -1,50 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   move_on_map.c                                      :+:      :+:    :+:   */
+/*   go_out.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/22 16:34:33 by zasabri           #+#    #+#             */
-/*   Updated: 2022/12/23 00:34:36 by zasabri          ###   ########.fr       */
+/*   Created: 2022/12/22 23:21:58 by zasabri           #+#    #+#             */
+/*   Updated: 2022/12/23 00:41:32 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	go_right(t_moves *p)
+void	if_right(t_moves *p)
 {
 	int	i;
 
 	i = 0;
 	while (p->map[i] && p->map[i] != 'P')
 		i++;
-	if (p->map[i + 1] == '0' || p->map[i + 1] == 'C')
+	if (p->map[i + 1] == 'E')
 	{
-		if (p->map[i + 1] == 'C')
-			p->coin_nbr -= 1;
-		p->map[i + 1] = 'P';
-		p->map[i] = '0';
+		ft_printf("\nWINNER WINNER WINNER\n");
+		exit(0);
 	}
 }
 
-void	go_left(t_moves *p)
+void	if_left(t_moves *p)
 {
 	int	i;
 
 	i = 0;
 	while (p->map[i] && p->map[i] != 'P')
 		i++;
-	if (p->map[i - 1] == '0' || p->map[i - 1] == 'C')
+	if (p->map[i - 1] == 'E')
 	{
-		if (p->map[i - 1] == 'C')
-			p->coin_nbr -= 1;
-		p->map[i] = '0';
-		p->map[i - 1] = 'P';
+		ft_printf("\nWINNER WINNER WINNER\n");
+		exit(0);
 	}
 }
 
-void	go_down(t_moves *p)
+void	if_down(t_moves *p)
 {
 	t_vars v;
 
@@ -70,16 +66,14 @@ void	go_down(t_moves *p)
 		v.a++;
 		v.c++;
 	}
-	if (p->map[v.a - 1] == 'C' || p->map[v.a - 1] == '0')
+	if (p->map[v.a - 1] == 'E')
 	{
-		if (p->map[v.a + 1] == 'C')
-			p->coin_nbr -= 1;
-		p->map[v.a - 1] = 'P';
-		p->map[v.d] = '0';
+		ft_printf("\nWINNER WINNER WINNER\n");
+		exit(0);
 	}
 }
 
-void	go_up(t_moves *p)
+void	if_up(t_moves *p)
 {
 	t_vars v;
 
@@ -105,23 +99,21 @@ void	go_up(t_moves *p)
 		v.a--;
 		v.c++;
 	}
-	if (p->map[v.a + 1] == 'C' || p->map[v.a + 1] == '0')
+	if (p->map[v.a + 1] == 'E')
 	{
-		if (p->map[v.a + 1] == 'C')
-			p->coin_nbr -= 1;
-		p->map[v.a + 1] = 'P';
-		p->map[v.d] = '0';
+		ft_printf("\nWINNER WINNER WINNER\n");
+		exit(0);
 	}
 }
 
-void	go_with_player(t_moves *param, int key)
+void	get_out(t_moves *param, int key)
 {
 	if (key == 125 || key == 1)
-		go_down(param);
+		if_down(param);
 	if (key == 126 || key == 13)
-		go_up(param);
+		if_up(param);
 	if (key == 124 || key == 2)
-		go_right(param);
+		if_right(param);
 	if (key == 123 || key == 0)
-		go_left(param);
+		if_left(param);
 }

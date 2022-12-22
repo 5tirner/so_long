@@ -6,7 +6,7 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/22 11:24:48 by zasabri           #+#    #+#             */
-/*   Updated: 2022/12/22 20:56:26 by zasabri          ###   ########.fr       */
+/*   Updated: 2022/12/23 00:36:46 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,9 +100,18 @@ void	ft_exit(t_moves *p, int l, int k)
 	int	x;
 	int	y;
 	
-	mlx_destroy_image(p->mlx, p->exit);
-	p->exit = mlx_xpm_file_to_image(p->mlx, "./pic/c_door.xpm", &x, &y);
-	mlx_put_image_to_window(p->mlx, p->win, p->exit, l, k);
+	if (p->coin_nbr == 0)
+	{
+		mlx_destroy_image(p->mlx, p->exit);
+		p->exit = mlx_xpm_file_to_image(p->mlx, "./pic/o_door.xpm", &x, &y);
+		mlx_put_image_to_window(p->mlx, p->win, p->exit, l, k);
+	}
+	else
+	{
+		mlx_destroy_image(p->mlx, p->exit);
+		p->exit = mlx_xpm_file_to_image(p->mlx, "./pic/c_door.xpm", &x, &y);
+		mlx_put_image_to_window(p->mlx, p->win, p->exit, l, k);
+	}
 }
 
 void	ft_move_in_map(t_moves *param, int key)
@@ -112,6 +121,8 @@ void	ft_move_in_map(t_moves *param, int key)
 	i = 0;
 	param->k = 0;
 	param->l = 0;
+	if (param->coin_nbr == 0)
+		get_out(param, key);
 	go_with_player(param, key);
 	while (param->map[i])
 	{

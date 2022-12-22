@@ -6,7 +6,7 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/18 04:01:35 by zasabri           #+#    #+#             */
-/*   Updated: 2022/12/22 11:29:10 by zasabri          ###   ########.fr       */
+/*   Updated: 2022/12/22 12:13:10 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,13 +45,13 @@ void	ft_coin_exit(t_moves *p, char c, int l, int k)
 
 	if (c == 'C')
 	{
-		p->wall = mlx_xpm_file_to_image(p->mlx, "./pic/coin1.xpm", &x, &y);
-		mlx_put_image_to_window(p->mlx, p->win, p->wall, l, k);
+		p->coin = mlx_xpm_file_to_image(p->mlx, "./pic/coin1.xpm", &x, &y);
+		mlx_put_image_to_window(p->mlx, p->win, p->coin, l, k);
 	}
 	if (c == 'E')
 	{
-		p->ground = mlx_xpm_file_to_image(p->mlx, "./pic/cl_door.xpm", &x, &y);
-		mlx_put_image_to_window(p->mlx, p->win, p->ground, l, k);
+		p->exit = mlx_xpm_file_to_image(p->mlx, "./pic/cl_door.xpm", &x, &y);
+		mlx_put_image_to_window(p->mlx, p->win, p->exit, l, k);
 	}
 }
 

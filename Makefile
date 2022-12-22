@@ -6,12 +6,11 @@
 #    By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/16 02:03:17 by zasabri           #+#    #+#              #
-#    Updated: 2022/12/22 11:03:35 by zasabri          ###   ########.fr        #
+#    Updated: 2022/12/22 11:51:23 by zasabri          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRSC	= help_function.c\
-		so_long.c\
+SRSC	= so_long.c\
 		ft_validation.c\
 		./libft/ft_strnstr.c\
 		./libft/ft_strlen.c\
@@ -37,6 +36,7 @@ SRSC	= help_function.c\
 		./ft_printf/ft_itoa.c\
 		./ft_printf/ft_unsigned.c\
 		./ft_printf/ft_utoa.c\
+		in_game.c\
 	
 OBJS	= $(SRSC:.c=.o)
 

@@ -6,7 +6,7 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 01:03:43 by zasabri           #+#    #+#             */
-/*   Updated: 2022/12/22 16:48:47 by zasabri          ###   ########.fr       */
+/*   Updated: 2022/12/22 20:36:48 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ int	main(int ac, char **av)
 			p.map = ft_strj(p.map, p.str);
 			p.str = get_next_line(p.fd);
 		}
+		p.map2 = ft_split(p.map, '\n');
 		ft_checkmap(&p, av);
 		p.mlx = mlx_init();
 		p.win = mlx_new_window(p.mlx, ft_width(av[1]), ft_l(av[1]), "so_long");

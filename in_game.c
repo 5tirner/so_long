@@ -6,7 +6,7 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/22 11:24:48 by zasabri           #+#    #+#             */
-/*   Updated: 2022/12/22 17:40:17 by zasabri          ###   ########.fr       */
+/*   Updated: 2022/12/22 20:56:26 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,28 +19,24 @@ void	ft_p(t_moves *p, int l, int k, int key)
 
 	if (key == 126 || key == 13)
 	{
-		ft_go_with_player(p, key);
-		mlx_destroy_image(p->mlx, p->player);
-		p->player = mlx_xpm_file_to_image(p->mlx, "./pic/back.xpm", &x, &y);
-		mlx_put_image_to_window(p->mlx, p->win, p->player, l, k);
-	}
-	if (key == 125 || key == 1)
-	{
-		ft_go_with_player(p, key);
 		mlx_destroy_image(p->mlx, p->player);
 		p->player = mlx_xpm_file_to_image(p->mlx, "./pic/face.xpm", &x, &y);
 		mlx_put_image_to_window(p->mlx, p->win, p->player, l, k);
 	}
+	if (key == 125 || key == 1)
+	{
+		mlx_destroy_image(p->mlx, p->player);
+		p->player = mlx_xpm_file_to_image(p->mlx, "./pic/back.xpm", &x, &y);
+		mlx_put_image_to_window(p->mlx, p->win, p->player, l, k);
+	}
 	if (key == 124 || key == 2)
 	{
-		ft_go_with_player(p, key);
 		mlx_destroy_image(p->mlx, p->player);
 		p->player = mlx_xpm_file_to_image(p->mlx, "./pic/right.xpm", &x, &y);
 		mlx_put_image_to_window(p->mlx, p->win, p->player, l, k);
 	}
 	if (key == 123 || key == 0)
 	{
-		ft_go_with_player(p, key);
 		mlx_destroy_image(p->mlx, p->player);
 		p->player = mlx_xpm_file_to_image(p->mlx, "./pic/left.xpm", &x, &y);
 		mlx_put_image_to_window(p->mlx, p->win, p->player, l, k);
@@ -116,6 +112,7 @@ void	ft_move_in_map(t_moves *param, int key)
 	i = 0;
 	param->k = 0;
 	param->l = 0;
+	go_with_player(param, key);
 	while (param->map[i])
 	{
 		if (param->map[i] == 'P')
@@ -126,13 +123,12 @@ void	ft_move_in_map(t_moves *param, int key)
 			ft_coin(param, param->l, param->k);
 		if (param->map[i] == '1' || param->map[i] == '0')
 			ft_zero_or_one(param, param->map[i], param->l, param->k);
-		i++;
 		param->l += 50;
 		if (param->map[i] == '\n')
 		{
 			param->k += 50;
 			param->l = 0;
-			i++;
 		}
+		i++;
 	}
 }

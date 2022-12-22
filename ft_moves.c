@@ -6,7 +6,7 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/18 03:49:40 by zasabri           #+#    #+#             */
-/*   Updated: 2022/12/22 13:10:53 by zasabri          ###   ########.fr       */
+/*   Updated: 2022/12/22 17:08:11 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void	ft_left_move(t_moves *p, int key)
 
 int	moves(int key, t_moves *param)
 {
-	if (key == 53)
+	if (key == 53 || key == 12)
 		exit(0);
 	if (key == 126 || key == 13)
 		ft_up_move(param, key);

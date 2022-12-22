@@ -6,7 +6,7 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/18 04:01:35 by zasabri           #+#    #+#             */
-/*   Updated: 2022/12/22 12:13:10 by zasabri          ###   ########.fr       */
+/*   Updated: 2022/12/22 15:05:04 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_player(t_moves *p, int l, int k)
 	int	x;
 	int	y;
 
-	p->player = mlx_xpm_file_to_image(p->mlx, "./pic/p_face.xpm", &x, &y);
+	p->player = mlx_xpm_file_to_image(p->mlx, "./pic/face.xpm", &x, &y);
 	mlx_put_image_to_window(p->mlx, p->win, p->player, l, k);
 }
 
@@ -50,7 +50,7 @@ void	ft_coin_exit(t_moves *p, char c, int l, int k)
 	}
 	if (c == 'E')
 	{
-		p->exit = mlx_xpm_file_to_image(p->mlx, "./pic/cl_door.xpm", &x, &y);
+		p->exit = mlx_xpm_file_to_image(p->mlx, "./pic/c_door.xpm", &x, &y);
 		mlx_put_image_to_window(p->mlx, p->win, p->exit, l, k);
 	}
 }
@@ -73,10 +73,10 @@ void	ft_fill_map(t_moves *param, char *map)
 		if (map[i] == '1' || map[i] == '0')
 			ft_zero_one(param, map[i], l, k);
 		i++;
-		l += 100;
+		l += 50;
 		if (map[i] == '\n')
 		{
-			k += 100;
+			k += 50;
 			l = 0;
 			i++;
 		}

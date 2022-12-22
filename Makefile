@@ -6,7 +6,7 @@
 #    By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/16 02:03:17 by zasabri           #+#    #+#              #
-#    Updated: 2022/12/22 11:51:23 by zasabri          ###   ########.fr        #
+#    Updated: 2022/12/22 16:34:18 by zasabri          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,12 +37,13 @@ SRSC	= so_long.c\
 		./ft_printf/ft_unsigned.c\
 		./ft_printf/ft_utoa.c\
 		in_game.c\
+		move_on_map.c\
 	
 OBJS	= $(SRSC:.c=.o)
 
 CC		= cc
 
-CFLAGS		= -Wall -Wextra -Werror
+CFLAGS	= -Wall -Wextra -Werror
 
 libmlx	= -I /usr/local/include -L /usr/local/bin -lmlx -framework openGL -framework Appkit
 

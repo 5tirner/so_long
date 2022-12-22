@@ -6,7 +6,7 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/18 05:41:25 by zasabri           #+#    #+#             */
-/*   Updated: 2022/12/22 11:34:33 by zasabri          ###   ########.fr       */
+/*   Updated: 2022/12/22 15:01:46 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	ft_width(char *av)
 	i = 0;
 	while (str_map[i] && str_map[i] != '\n')
 		i++;
-	return (100 * i);
+	return (50 * i);
 }
 
 int	ft_l(char *av)
@@ -53,5 +53,5 @@ int	ft_l(char *av)
 	i = 0;
 	while (str_map2[i])
 		i++;
-	return (i * 100);
+	return (i * 50);
 }

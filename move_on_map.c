@@ -6,7 +6,7 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/22 16:34:33 by zasabri           #+#    #+#             */
-/*   Updated: 2022/12/22 20:44:29 by zasabri          ###   ########.fr       */
+/*   Updated: 2022/12/22 23:01:41 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,39 +40,78 @@ void	go_left(t_moves *p)
 	}
 }
 
-// void	go_up(t_moves *p)
-// {
-// 	int	i;
-// 	int	j;
-// 	int k;
+void	go_down(t_moves *p)
+{
+	t_vars v;
 
-// 	i = 0;
-// 	j = 0;
-// 	while (p->map[i] && p->map[i] != 'P')
-// 		i++;
-// 	k = i;
-// 	while (p->map[i] && p->map[i] != '\n')
-// 		i++;
-// 	i += 1;
-// 	while (p->map[i])
-// 	{
-// 		if (j == k)
-// 			break;
-// 		i++;
-// 		j++;
-// 	}
-// 	if (p->map[i] == '0' || p->map[i] == 'C')
-// 	{
-// 		p->map[i] = 'P';
-// 		p->map[k] = '0';
-// 	}
-// }
+	v.a = 0;
+	v.b = 0;
+	v.c = 0;
+	v.d = 0;
+	while (p->map[v.a] && p->map[v.a] != 'P')
+	{
+		if (p->map[v.a] == '\n')
+			v.b = 0;
+		v.a++;
+		v.b++;
+		v.d++;
+	}
+	while (p->map[v.a] && p->map[v.a] != '\n')
+		v.a++;
+	v.a += 1;
+	while (p->map[v.a] && p->map[v.a] != '\n')
+	{
+		if (v.b == v.c)
+			break;
+		v.a++;
+		v.c++;
+	}
+	if (p->map[v.a - 1] == 'C' || p->map[v.a - 1] == '0')
+	{
+		p->map[v.a - 1] = 'P';
+		p->map[v.d] = '0';
+	}
+}
+
+void	go_up(t_moves *p)
+{
+	t_vars v;
+
+	v.a = ft_strlen(p->map) - 1;
+	v.b = 0;
+	v.c = 0;
+	v.d = ft_strlen(p->map) - 1;
+	while (p->map[v.a] && p->map[v.a] != 'P')
+	{
+		if (p->map[v.a] == '\n')
+			v.b = 0;
+		v.a--;
+		v.b++;
+		v.d--;
+	}
+	while (p->map[v.a] && p->map[v.a] != '\n')
+		v.a--;
+	v.a -= 1;
+	while (p->map[v.a] && p->map[v.a] != '\n')
+	{
+		if (v.b == v.c)
+			break;
+		v.a--;
+		v.c++;
+	}
+	if (p->map[v.a + 1] == 'C' || p->map[v.a + 1] == '0')
+	{
+		p->map[v.a + 1] = 'P';
+		p->map[v.d] = '0';
+	}
+}
+
 void	go_with_player(t_moves *param, int key)
 {
-	// if (key == 126 || key == 13)
-	// 	go_up(param);
-	// if (key == 125 || key == 1)
-	// 	ft_down_move(param, key);
+	if (key == 125 || key == 1)
+		go_down(param);
+	if (key == 126 || key == 13)
+		go_up(param);
 	if (key == 124 || key == 2)
 		go_right(param);
 	if (key == 123 || key == 0)

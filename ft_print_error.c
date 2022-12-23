@@ -6,7 +6,7 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/17 04:52:06 by zasabri           #+#    #+#             */
-/*   Updated: 2022/12/22 12:51:35 by zasabri          ###   ########.fr       */
+/*   Updated: 2022/12/23 19:13:26 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 
 void	error_generat(char *av)
 {
-	write(2, "Error\n", 6);
-	write(2, av, ft_strlen(av));
-	write (2, ": is invalid map\n", 17);
-	exit(1);
+	ft_printf("Error\n");
+	ft_printf("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\n");
+	ft_printf("| %s: is invalid map        |\n", av);
+	ft_printf("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\n");
+	exit(0);
 }

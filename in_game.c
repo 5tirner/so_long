@@ -6,7 +6,7 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/22 11:24:48 by zasabri           #+#    #+#             */
-/*   Updated: 2022/12/23 00:36:46 by zasabri          ###   ########.fr       */
+/*   Updated: 2022/12/23 15:15:57 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ void	ft_coin(t_moves *p, int l, int k)
 {
 	int	x;
 	int	y;
-	
+
 	if (p->coin_mv == 0)
 	{
 		mlx_destroy_image(p->mlx, p->coin);
@@ -92,14 +92,14 @@ void	ft_coin(t_moves *p, int l, int k)
 		mlx_put_image_to_window(p->mlx, p->win, p->coin, l, k);
 		p->coin_mv = 0;
 	}
-	p->coin_mv++;		
+	p->coin_mv++;
 }
 
 void	ft_exit(t_moves *p, int l, int k)
 {
 	int	x;
 	int	y;
-	
+
 	if (p->coin_nbr == 0)
 	{
 		mlx_destroy_image(p->mlx, p->exit);

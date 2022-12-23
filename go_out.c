@@ -6,7 +6,7 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/22 23:21:58 by zasabri           #+#    #+#             */
-/*   Updated: 2022/12/23 00:41:32 by zasabri          ###   ########.fr       */
+/*   Updated: 2022/12/23 15:51:17 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,7 @@ void	if_right(t_moves *p)
 	while (p->map[i] && p->map[i] != 'P')
 		i++;
 	if (p->map[i + 1] == 'E')
-	{
-		ft_printf("\nWINNER WINNER WINNER\n");
-		exit(0);
-	}
+		win_func();
 }
 
 void	if_left(t_moves *p)
@@ -34,20 +31,14 @@ void	if_left(t_moves *p)
 	while (p->map[i] && p->map[i] != 'P')
 		i++;
 	if (p->map[i - 1] == 'E')
-	{
-		ft_printf("\nWINNER WINNER WINNER\n");
-		exit(0);
-	}
+		win_func();
 }
 
 void	if_down(t_moves *p)
 {
-	t_vars v;
+	t_vars	v;
 
-	v.a = 0;
-	v.b = 0;
-	v.c = 0;
-	v.d = 0;
+	vars_value_nb1(&v.a, &v.b, &v.c, &v.d);
 	while (p->map[v.a] && p->map[v.a] != 'P')
 	{
 		if (p->map[v.a] == '\n')
@@ -62,25 +53,19 @@ void	if_down(t_moves *p)
 	while (p->map[v.a] && p->map[v.a] != '\n')
 	{
 		if (v.b == v.c)
-			break;
+			break ;
 		v.a++;
 		v.c++;
 	}
 	if (p->map[v.a - 1] == 'E')
-	{
-		ft_printf("\nWINNER WINNER WINNER\n");
-		exit(0);
-	}
+		win_func();
 }
 
 void	if_up(t_moves *p)
 {
-	t_vars v;
+	t_vars	v;
 
-	v.a = ft_strlen(p->map) - 1;
-	v.b = 0;
-	v.c = 0;
-	v.d = ft_strlen(p->map) - 1;
+	vars_value_nb2(p, &v.a, &v.b, &v.c, &v.d);
 	while (p->map[v.a] && p->map[v.a] != 'P')
 	{
 		if (p->map[v.a] == '\n')
@@ -95,15 +80,12 @@ void	if_up(t_moves *p)
 	while (p->map[v.a] && p->map[v.a] != '\n')
 	{
 		if (v.b == v.c)
-			break;
+			break ;
 		v.a--;
 		v.c++;
 	}
 	if (p->map[v.a + 1] == 'E')
-	{
-		ft_printf("\nWINNER WINNER WINNER\n");
-		exit(0);
-	}
+		win_func();
 }
 
 void	get_out(t_moves *param, int key)

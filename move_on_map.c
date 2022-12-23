@@ -6,7 +6,7 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/22 16:34:33 by zasabri           #+#    #+#             */
-/*   Updated: 2022/12/23 02:06:49 by zasabri          ###   ########.fr       */
+/*   Updated: 2022/12/23 15:17:12 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void	go_left(t_moves *p)
 
 void	go_down(t_moves *p)
 {
-	t_vars v;
+	t_vars	v;
 
 	v.a = 0;
 	v.b = 0;
@@ -70,7 +70,7 @@ void	go_down(t_moves *p)
 	while (p->map[v.a] && p->map[v.a] != '\n')
 	{
 		if (v.b == v.c)
-			break;
+			break ;
 		v.a++;
 		v.c++;
 	}
@@ -87,7 +87,7 @@ void	go_down(t_moves *p)
 
 void	go_up(t_moves *p)
 {
-	t_vars v;
+	t_vars	v;
 
 	v.a = ft_strlen(p->map) - 1;
 	v.b = 0;
@@ -107,7 +107,7 @@ void	go_up(t_moves *p)
 	while (p->map[v.a] && p->map[v.a] != '\n')
 	{
 		if (v.b == v.c)
-			break;
+			break ;
 		v.a--;
 		v.c++;
 	}

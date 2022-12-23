@@ -6,7 +6,7 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/22 16:34:33 by zasabri           #+#    #+#             */
-/*   Updated: 2022/12/23 01:11:21 by zasabri          ###   ########.fr       */
+/*   Updated: 2022/12/23 02:06:49 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ void	go_right(t_moves *p)
 			p->coin_nbr -= 1;
 		p->map[i + 1] = 'P';
 		p->map[i] = '0';
+		p->mv_nb++;
+		ft_printf("move number %d: right\n", p->mv_nb);
 	}
 }
 
@@ -41,6 +43,8 @@ void	go_left(t_moves *p)
 			p->coin_nbr -= 1;
 		p->map[i] = '0';
 		p->map[i - 1] = 'P';
+		p->mv_nb++;
+		ft_printf("move number %d: left\n", p->mv_nb);
 	}
 }
 
@@ -76,6 +80,8 @@ void	go_down(t_moves *p)
 			p->coin_nbr -= 1;
 		p->map[v.a - 1] = 'P';
 		p->map[v.d] = '0';
+		p->mv_nb++;
+		ft_printf("move number %d: down\n", p->mv_nb);
 	}
 }
 
@@ -111,6 +117,8 @@ void	go_up(t_moves *p)
 			p->coin_nbr -= 1;
 		p->map[v.a + 1] = 'P';
 		p->map[v.d] = '0';
+		p->mv_nb++;
+		ft_printf("move number %d: up\n", p->mv_nb);
 	}
 }
 

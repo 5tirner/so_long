@@ -6,7 +6,7 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/22 11:24:48 by zasabri           #+#    #+#             */
-/*   Updated: 2022/12/23 15:15:57 by zasabri          ###   ########.fr       */
+/*   Updated: 2022/12/23 17:05:51 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,13 @@ void	ft_p(t_moves *p, int l, int k, int key)
 	if (key == 126 || key == 13)
 	{
 		mlx_destroy_image(p->mlx, p->player);
-		p->player = mlx_xpm_file_to_image(p->mlx, "./pic/face.xpm", &x, &y);
+		p->player = mlx_xpm_file_to_image(p->mlx, "./pic/back.xpm", &x, &y);
 		mlx_put_image_to_window(p->mlx, p->win, p->player, l, k);
 	}
 	if (key == 125 || key == 1)
 	{
 		mlx_destroy_image(p->mlx, p->player);
-		p->player = mlx_xpm_file_to_image(p->mlx, "./pic/back.xpm", &x, &y);
+		p->player = mlx_xpm_file_to_image(p->mlx, "./pic/face.xpm", &x, &y);
 		mlx_put_image_to_window(p->mlx, p->win, p->player, l, k);
 	}
 	if (key == 124 || key == 2)

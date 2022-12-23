@@ -6,7 +6,7 @@
 #    By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/16 02:03:17 by zasabri           #+#    #+#              #
-#    Updated: 2022/12/23 00:20:55 by zasabri          ###   ########.fr        #
+#    Updated: 2022/12/23 01:26:45 by zasabri          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,7 +45,7 @@ OBJS	= $(SRSC:.c=.o)
 
 CC		= cc
 
-CFLAGS	= -Wall -Wextra -Werror
+CFLAGS	= -fsanitize=address -Wall -Wextra -Werror
 
 libmlx	= -I /usr/local/include -L /usr/local/bin -lmlx -framework openGL -framework Appkit
 

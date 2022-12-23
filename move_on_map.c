@@ -6,7 +6,7 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/22 16:34:33 by zasabri           #+#    #+#             */
-/*   Updated: 2022/12/23 00:34:36 by zasabri          ###   ########.fr       */
+/*   Updated: 2022/12/23 01:11:21 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ void	go_down(t_moves *p)
 	}
 	if (p->map[v.a - 1] == 'C' || p->map[v.a - 1] == '0')
 	{
-		if (p->map[v.a + 1] == 'C')
+		if (p->map[v.a - 1] == 'C')
 			p->coin_nbr -= 1;
 		p->map[v.a - 1] = 'P';
 		p->map[v.d] = '0';

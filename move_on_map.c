@@ -6,7 +6,7 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/22 16:34:33 by zasabri           #+#    #+#             */
-/*   Updated: 2022/12/23 15:17:12 by zasabri          ###   ########.fr       */
+/*   Updated: 2022/12/24 14:10:08 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,10 +52,7 @@ void	go_down(t_moves *p)
 {
 	t_vars	v;
 
-	v.a = 0;
-	v.b = 0;
-	v.c = 0;
-	v.d = 0;
+	vars_value_nb1(&v.a, &v.b, &v.c, &v.d);
 	while (p->map[v.a] && p->map[v.a] != 'P')
 	{
 		if (p->map[v.a] == '\n')
@@ -75,24 +72,14 @@ void	go_down(t_moves *p)
 		v.c++;
 	}
 	if (p->map[v.a - 1] == 'C' || p->map[v.a - 1] == '0')
-	{
-		if (p->map[v.a - 1] == 'C')
-			p->coin_nbr -= 1;
-		p->map[v.a - 1] = 'P';
-		p->map[v.d] = '0';
-		p->mv_nb++;
-		ft_printf("move number %d: down\n", p->mv_nb);
-	}
+		go_down_and_up_norm(p, &p->map[v.a - 1], &p->map[v.d]);
 }
 
 void	go_up(t_moves *p)
 {
 	t_vars	v;
 
-	v.a = ft_strlen(p->map) - 1;
-	v.b = 0;
-	v.c = 0;
-	v.d = ft_strlen(p->map) - 1;
+	vars_value_nb2(p, &v.a, &v.b, &v.c, &v.d);
 	while (p->map[v.a] && p->map[v.a] != 'P')
 	{
 		if (p->map[v.a] == '\n')
@@ -112,14 +99,7 @@ void	go_up(t_moves *p)
 		v.c++;
 	}
 	if (p->map[v.a + 1] == 'C' || p->map[v.a + 1] == '0')
-	{
-		if (p->map[v.a + 1] == 'C')
-			p->coin_nbr -= 1;
-		p->map[v.a + 1] = 'P';
-		p->map[v.d] = '0';
-		p->mv_nb++;
-		ft_printf("move number %d: up\n", p->mv_nb);
-	}
+		go_down_and_up_norm(p, &p->map[v.a + 1], &p->map[v.d]);
 }
 
 void	go_with_player(t_moves *param, int key)

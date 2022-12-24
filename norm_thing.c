@@ -6,7 +6,7 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/23 15:24:09 by zasabri           #+#    #+#             */
-/*   Updated: 2022/12/23 17:44:20 by zasabri          ###   ########.fr       */
+/*   Updated: 2022/12/24 14:05:14 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,4 +34,14 @@ void	win_func(void)
 	ft_printf("| Congra, You Win! |");
 	ft_printf("\n--------------------\n\n");
 	exit(0);
+}
+
+void	go_down_and_up_norm(t_moves *p, char *c1, char *c2)
+{
+	if (*c1 == 'C')
+		p->coin_nbr -= 1;
+	*c1 = 'P';
+	*c2 = '0';
+	p->mv_nb++;
+	ft_printf("move number %d: down\n", p->mv_nb);
 }

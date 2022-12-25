@@ -6,7 +6,7 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 02:27:42 by zasabri           #+#    #+#             */
-/*   Updated: 2022/12/25 10:53:15 by zasabri          ###   ########.fr       */
+/*   Updated: 2022/12/25 11:19:35 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ typedef struct s_moves
 	char	*map;
 	int		l;
 	int		k;
+	int		x;
+	int		y;
 }	t_moves;
 
 typedef struct s_vars
@@ -47,8 +49,6 @@ typedef struct s_vars
 	int	b;
 	int	c;
 	int	d;
-	int	x;
-	int	y;
 }	t_vars;
 
 char	*ft_itoa(int nb);

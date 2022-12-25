@@ -6,7 +6,7 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/18 04:01:35 by zasabri           #+#    #+#             */
-/*   Updated: 2022/12/22 15:05:04 by zasabri          ###   ########.fr       */
+/*   Updated: 2022/12/25 11:31:47 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_player(t_moves *p, int l, int k)
 	int	x;
 	int	y;
 
-	p->player = mlx_xpm_file_to_image(p->mlx, "./pic/face.xpm", &x, &y);
+	p->player = mlx_xpm_file_to_image(p->mlx, "./pic/f.xpm", &x, &y);
 	mlx_put_image_to_window(p->mlx, p->win, p->player, l, k);
 }
 
@@ -45,7 +45,7 @@ void	ft_coin_exit(t_moves *p, char c, int l, int k)
 
 	if (c == 'C')
 	{
-		p->coin = mlx_xpm_file_to_image(p->mlx, "./pic/coin1.xpm", &x, &y);
+		p->coin = mlx_xpm_file_to_image(p->mlx, "./pic/c1.xpm", &x, &y);
 		mlx_put_image_to_window(p->mlx, p->win, p->coin, l, k);
 	}
 	if (c == 'E')

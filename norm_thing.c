@@ -6,7 +6,7 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/23 15:24:09 by zasabri           #+#    #+#             */
-/*   Updated: 2022/12/25 11:02:55 by zasabri          ###   ########.fr       */
+/*   Updated: 2022/12/25 11:12:35 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,4 +44,3 @@ void	go_down_and_up_norm(t_moves *p, char *c1, char *c2)
 	p->mv_nb++;
 	ft_printf("move number %d: down\n", p->mv_nb);
 }
-

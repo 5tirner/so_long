@@ -6,7 +6,7 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/22 11:24:48 by zasabri           #+#    #+#             */
-/*   Updated: 2022/12/23 17:05:51 by zasabri          ###   ########.fr       */
+/*   Updated: 2022/12/25 11:10:51 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,13 +118,13 @@ void	ft_move_in_map(t_moves *param, int key)
 {
 	int	i;
 
-	i = 0;
+	i = -1;
 	param->k = 0;
 	param->l = 0;
 	if (param->coin_nbr == 0)
 		get_out(param, key);
 	go_with_player(param, key);
-	while (param->map[i])
+	while (param->map[++i])
 	{
 		if (param->map[i] == 'P')
 			ft_p(param, param->l, param->k, key);
@@ -140,6 +140,5 @@ void	ft_move_in_map(t_moves *param, int key)
 			param->k += 50;
 			param->l = 0;
 		}
-		i++;
 	}
 }

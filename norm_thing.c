@@ -6,7 +6,7 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/23 15:24:09 by zasabri           #+#    #+#             */
-/*   Updated: 2022/12/24 14:05:14 by zasabri          ###   ########.fr       */
+/*   Updated: 2022/12/25 11:02:55 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,18 +20,17 @@ void	vars_value_nb1(int *v_a, int *v_b, int *v_c, int *v_d)
 	*v_d = 0;
 }
 
-void	vars_value_nb2(t_moves *p, int *v_a, int *v_b, int *v_c, int *v_d)
+void	vars_value_nb2(t_moves *p, int *v_a, int *v_b, int *v_c)
 {
 	*v_a = ft_strlen(p->map) - 1;
 	*v_b = 0;
 	*v_c = 0;
-	*v_d = ft_strlen(p->map) - 1;
 }
 
 void	win_func(void)
 {
 	ft_printf("\n--------------------\n");
-	ft_printf("| Congra, You Win! |");
+	ft_printf("| Congra, You Win  |");
 	ft_printf("\n--------------------\n\n");
 	exit(0);
 }
@@ -45,3 +44,4 @@ void	go_down_and_up_norm(t_moves *p, char *c1, char *c2)
 	p->mv_nb++;
 	ft_printf("move number %d: down\n", p->mv_nb);
 }
+

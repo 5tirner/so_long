@@ -6,7 +6,7 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 02:27:42 by zasabri           #+#    #+#             */
-/*   Updated: 2022/12/24 14:04:33 by zasabri          ###   ########.fr       */
+/*   Updated: 2022/12/25 10:53:15 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ void	go_with_player(t_moves *param, int key);
 int		coin_nbr(t_moves *p);
 void	get_out(t_moves *param, int key);
 void	vars_value_nb1(int *v_a, int *v_b, int *v_c, int *v_d);
-void	vars_value_nb2(t_moves *p, int *v_a, int *v_b, int *v_c, int *v_d);
+void	vars_value_nb2(t_moves *p, int *v_a, int *v_b, int *v_c);
 void	win_func(void);
 void	go_down_and_up_norm(t_moves *p, char *c1, char *c2);
 #endif

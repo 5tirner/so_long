@@ -6,7 +6,7 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/22 23:21:58 by zasabri           #+#    #+#             */
-/*   Updated: 2022/12/23 17:43:45 by zasabri          ###   ########.fr       */
+/*   Updated: 2022/12/25 10:51:55 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,8 @@ void	if_up(t_moves *p)
 {
 	t_vars	v;
 
-	vars_value_nb2(p, &v.a, &v.b, &v.c, &v.d);
+	v.d = ft_strlen(p->map) - 1;
+	vars_value_nb2(p, &v.a, &v.b, &v.c);
 	while (p->map[v.a] && p->map[v.a] != 'P')
 	{
 		if (p->map[v.a] == '\n')

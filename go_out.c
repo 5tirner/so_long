@@ -6,13 +6,13 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/22 23:21:58 by zasabri           #+#    #+#             */
-/*   Updated: 2022/12/25 10:51:55 by zasabri          ###   ########.fr       */
+/*   Updated: 2022/12/26 18:59:41 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	if_right(t_moves *p)
+void	if_right(t_moves *p, int key)
 {
 	int	i;
 
@@ -20,10 +20,10 @@ void	if_right(t_moves *p)
 	while (p->map[i] && p->map[i] != 'P')
 		i++;
 	if (p->map[i + 1] == 'E')
-		win_func();
+		win_func(p, key);
 }
 
-void	if_left(t_moves *p)
+void	if_left(t_moves *p, int key)
 {
 	int	i;
 
@@ -31,10 +31,10 @@ void	if_left(t_moves *p)
 	while (p->map[i] && p->map[i] != 'P')
 		i++;
 	if (p->map[i - 1] == 'E')
-		win_func();
+		win_func(p, key);
 }
 
-void	if_down(t_moves *p)
+void	if_down(t_moves *p, int key)
 {
 	t_vars	v;
 
@@ -58,10 +58,10 @@ void	if_down(t_moves *p)
 		v.c++;
 	}
 	if (p->map[v.a - 1] == 'E')
-		win_func();
+		win_func(p, key);
 }
 
-void	if_up(t_moves *p)
+void	if_up(t_moves *p, int key)
 {
 	t_vars	v;
 
@@ -86,17 +86,17 @@ void	if_up(t_moves *p)
 		v.c++;
 	}
 	if (p->map[v.a + 1] == 'E')
-		win_func();
+		win_func(p, key);
 }
 
 void	get_out(t_moves *param, int key)
 {
 	if (key == 125 || key == 1)
-		if_down(param);
+		if_down(param, key);
 	if (key == 126 || key == 13)
-		if_up(param);
+		if_up(param, key);
 	if (key == 124 || key == 2)
-		if_right(param);
+		if_right(param, key);
 	if (key == 123 || key == 0)
-		if_left(param);
+		if_left(param, key);
 }

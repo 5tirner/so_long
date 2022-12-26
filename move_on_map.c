@@ -6,7 +6,7 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/22 16:34:33 by zasabri           #+#    #+#             */
-/*   Updated: 2022/12/26 15:24:03 by zasabri          ###   ########.fr       */
+/*   Updated: 2022/12/26 18:51:50 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void	go_left(t_moves *p)
 	}
 }
 
-void	go_down(t_moves *p)
+void	go_down(t_moves *p, int key)
 {
 	t_vars	v;
 
@@ -72,10 +72,10 @@ void	go_down(t_moves *p)
 		v.c++;
 	}
 	if (p->map[v.a - 1] == 'C' || p->map[v.a - 1] == '0')
-		go_down_and_up_norm(p, &p->map[v.a - 1], &p->map[v.d]);
+		go_down_and_up_norm(p, &p->map[v.a - 1], &p->map[v.d], key);
 }
 
-void	go_up(t_moves *p)
+void	go_up(t_moves *p, int key)
 {
 	t_vars	v;
 
@@ -100,15 +100,15 @@ void	go_up(t_moves *p)
 		v.c++;
 	}
 	if (p->map[v.a + 1] == 'C' || p->map[v.a + 1] == '0')
-		go_down_and_up_norm(p, &p->map[v.a + 1], &p->map[v.d]);
+		go_down_and_up_norm(p, &p->map[v.a + 1], &p->map[v.d], key);
 }
 
 void	go_with_player(t_moves *param, int key)
 {
 	if (key == 125 || key == 1)
-		go_down(param);
+		go_down(param, key);
 	if (key == 126 || key == 13)
-		go_up(param);
+		go_up(param, key);
 	if (key == 124 || key == 2)
 		go_right(param);
 	if (key == 123 || key == 0)

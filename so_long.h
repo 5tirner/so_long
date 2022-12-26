@@ -6,7 +6,7 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 02:27:42 by zasabri           #+#    #+#             */
-/*   Updated: 2022/12/26 15:26:05 by zasabri          ###   ########.fr       */
+/*   Updated: 2022/12/26 18:58:48 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ int		coin_nbr(t_moves *p);
 void	get_out(t_moves *param, int key);
 void	vars_value_nb1(int *v_a, int *v_b, int *v_c, int *v_d);
 void	vars_value_nb2(t_moves *p, int *v_a, int *v_b, int *v_c);
-void	win_func(void);
-void	go_down_and_up_norm(t_moves *p, char *c1, char *c2);
+void	win_func(t_moves *p, int key);
+void	go_down_and_up_norm(t_moves *p, char *c1, char *c2, int key);
 void	all_is_good(t_moves *p, char *av);
 #endif

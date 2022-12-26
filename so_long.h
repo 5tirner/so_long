@@ -6,7 +6,7 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 02:27:42 by zasabri           #+#    #+#             */
-/*   Updated: 2022/12/25 11:19:35 by zasabri          ###   ########.fr       */
+/*   Updated: 2022/12/26 15:26:05 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ typedef struct s_moves
 	int		k;
 	int		x;
 	int		y;
+	char	**map2;
 }	t_moves;
 
 typedef struct s_vars
@@ -50,6 +51,12 @@ typedef struct s_vars
 	int	c;
 	int	d;
 }	t_vars;
+
+typedef struct s_pos
+{
+	int	a;
+	int	b;
+}	t_pos;
 
 char	*ft_itoa(int nb);
 void	ft_show(t_moves *param);
@@ -70,4 +77,5 @@ void	vars_value_nb1(int *v_a, int *v_b, int *v_c, int *v_d);
 void	vars_value_nb2(t_moves *p, int *v_a, int *v_b, int *v_c);
 void	win_func(void);
 void	go_down_and_up_norm(t_moves *p, char *c1, char *c2);
+void	all_is_good(t_moves *p, char *av);
 #endif

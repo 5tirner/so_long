@@ -6,7 +6,7 @@
 #    By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/16 02:03:17 by zasabri           #+#    #+#              #
-#    Updated: 2022/12/23 15:30:31 by zasabri          ###   ########.fr        #
+#    Updated: 2022/12/26 15:26:35 by zasabri          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,6 +41,7 @@ SRSC	= so_long.c\
 		coin_nbr.c\
 		go_out.c\
 		norm_thing.c\
+		flood_fill.c\
 	
 OBJS	= $(SRSC:.c=.o)
 

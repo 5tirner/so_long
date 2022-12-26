@@ -6,11 +6,53 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 01:03:43 by zasabri           #+#    #+#             */
-/*   Updated: 2022/12/23 17:37:42 by zasabri          ###   ########.fr       */
+/*   Updated: 2022/12/26 15:26:01 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+
+int	pos1_for_flood_fill(t_moves *p)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	j = 0;
+	while (p->map2[i])
+	{
+		j = 0;
+		while (p->map2[i][j])
+		{
+			if (p->map2[i][j] == 'P')
+				break ;
+			j++;
+		}
+		i++;
+	}
+	return (j);
+}
+
+int	pos2_for_flood_fill(t_moves *p)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	j = 0;
+	while (p->map2[i])
+	{
+		j = 0;
+		while (p->map2[i][j])
+		{
+			if (p->map2[i][j] == 'P')
+				break ;
+			j++;
+		}
+		i++;
+	}
+	return (i);
+}
 
 void	ft_var_value(t_moves *p, char *av)
 {
@@ -38,6 +80,8 @@ int	main(int ac, char **av)
 			p.str = get_next_line(p.fd);
 		}
 		p.coin_nbr = coin_nbr(&p);
+		p.map2 = ft_split(p.map, '\n');
+		all_is_good(&p, av[1]);
 		ft_checkmap(&p, av);
 		p.mlx = mlx_init();
 		p.win = mlx_new_window(p.mlx, ft_width(av[1]), ft_l(av[1]), "so_long");

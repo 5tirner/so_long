@@ -6,7 +6,7 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 02:27:42 by zasabri           #+#    #+#             */
-/*   Updated: 2022/12/26 18:58:48 by zasabri          ###   ########.fr       */
+/*   Updated: 2022/12/27 15:13:29 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,4 +78,8 @@ void	vars_value_nb2(t_moves *p, int *v_a, int *v_b, int *v_c);
 void	win_func(t_moves *p, int key);
 void	go_down_and_up_norm(t_moves *p, char *c1, char *c2, int key);
 void	all_is_good(t_moves *p, char *av);
+void	player_move1(t_moves *p, int l, int k);
+void	player_move2(t_moves *p, int l, int k);
+void	player_move3(t_moves *p, int l, int k);
+void	player_move4(t_moves *p, int l, int k);
 #endif

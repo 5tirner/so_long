@@ -6,7 +6,7 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/25 14:00:01 by zasabri           #+#    #+#             */
-/*   Updated: 2022/12/26 18:24:54 by zasabri          ###   ########.fr       */
+/*   Updated: 2022/12/27 14:23:05 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -167,7 +167,6 @@ void	all_is_good(t_moves *p, char *av)
 				error_generat(av);
 			j++;
 		}
-		printf("%s\n", p->map2[i]);
 		i++;
 	}
 }

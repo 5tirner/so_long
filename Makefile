@@ -6,7 +6,7 @@
 #    By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/16 02:03:17 by zasabri           #+#    #+#              #
-#    Updated: 2022/12/26 15:26:35 by zasabri          ###   ########.fr        #
+#    Updated: 2022/12/27 15:04:03 by zasabri          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,6 +42,7 @@ SRSC	= so_long.c\
 		go_out.c\
 		norm_thing.c\
 		flood_fill.c\
+		player_moves.c\
 	
 OBJS	= $(SRSC:.c=.o)
 

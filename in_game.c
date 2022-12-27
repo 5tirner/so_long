@@ -6,7 +6,7 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/22 11:24:48 by zasabri           #+#    #+#             */
-/*   Updated: 2022/12/26 15:23:52 by zasabri          ###   ########.fr       */
+/*   Updated: 2022/12/27 15:02:40 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,29 +15,13 @@
 void	ft_p(t_moves *p, int l, int k, int key)
 {
 	if (key == 126 || key == 13)
-	{
-		mlx_destroy_image(p->mlx, p->player);
-		p->player = mlx_xpm_file_to_image(p->mlx, "./pic/b.xpm", &p->x, &p->y);
-		mlx_put_image_to_window(p->mlx, p->win, p->player, l, k);
-	}
+		player_move1(p, l, k);
 	if (key == 125 || key == 1)
-	{
-		mlx_destroy_image(p->mlx, p->player);
-		p->player = mlx_xpm_file_to_image(p->mlx, "./pic/f.xpm", &p->x, &p->y);
-		mlx_put_image_to_window(p->mlx, p->win, p->player, l, k);
-	}
+		player_move2(p, l, k);
 	if (key == 124 || key == 2)
-	{
-		mlx_destroy_image(p->mlx, p->player);
-		p->player = mlx_xpm_file_to_image(p->mlx, "./pic/r.xpm", &p->x, &p->y);
-		mlx_put_image_to_window(p->mlx, p->win, p->player, l, k);
-	}
+		player_move3(p, l, k);
 	if (key == 123 || key == 0)
-	{
-		mlx_destroy_image(p->mlx, p->player);
-		p->player = mlx_xpm_file_to_image(p->mlx, "./pic/l.xpm", &p->x, &p->y);
-		mlx_put_image_to_window(p->mlx, p->win, p->player, l, k);
-	}
+		player_move4(p, l, k);
 }
 
 void	ft_zero_or_one(t_moves *p, char c, int l, int k)
@@ -57,29 +41,33 @@ void	ft_zero_or_one(t_moves *p, char c, int l, int k)
 		p->ground = mlx_xpm_file_to_image(p->mlx, "./pic/ground.xpm", &x, &y);
 		mlx_put_image_to_window(p->mlx, p->win, p->ground, l, k);
 	}
+	if (!p->wall || !p->ground)
+		exit(0);
 }
 
 void	ft_coin(t_moves *p, int l, int k)
 {
+	mlx_destroy_image(p->mlx, p->coin);
 	if (p->coin_mv == 0)
 	{
-		mlx_destroy_image(p->mlx, p->coin);
 		p->coin = mlx_xpm_file_to_image(p->mlx, "./pic/c1.xpm", &p->x, &p->y);
-		mlx_put_image_to_window(p->mlx, p->win, p->coin, l, k);
+		if (!p->coin)
+			exit(1);
 	}
 	if (p->coin_mv == 1)
 	{
-		mlx_destroy_image(p->mlx, p->coin);
 		p->coin = mlx_xpm_file_to_image(p->mlx, "./pic/c2.xpm", &p->x, &p->y);
-		mlx_put_image_to_window(p->mlx, p->win, p->coin, l, k);
+		if (!p->coin)
+			exit(1);
 	}
 	if (p->coin_mv == 2)
 	{
-		mlx_destroy_image(p->mlx, p->coin);
 		p->coin = mlx_xpm_file_to_image(p->mlx, "./pic/c3.xpm", &p->x, &p->y);
-		mlx_put_image_to_window(p->mlx, p->win, p->coin, l, k);
+		if (!p->coin)
+			exit(1);
 		p->coin_mv = -1;
 	}
+	mlx_put_image_to_window(p->mlx, p->win, p->coin, l, k);
 	p->coin_mv++;
 }
 
@@ -92,12 +80,16 @@ void	ft_exit(t_moves *p, int l, int k)
 	{
 		mlx_destroy_image(p->mlx, p->exit);
 		p->exit = mlx_xpm_file_to_image(p->mlx, "./pic/o_door.xpm", &x, &y);
+		if (!p->exit)
+			exit(1);
 		mlx_put_image_to_window(p->mlx, p->win, p->exit, l, k);
 	}
 	else
 	{
 		mlx_destroy_image(p->mlx, p->exit);
 		p->exit = mlx_xpm_file_to_image(p->mlx, "./pic/c_door.xpm", &x, &y);
+		if (!p->exit)
+			exit(1);
 		mlx_put_image_to_window(p->mlx, p->win, p->exit, l, k);
 	}
 }

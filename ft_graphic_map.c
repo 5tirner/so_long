@@ -6,7 +6,7 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/18 04:01:35 by zasabri           #+#    #+#             */
-/*   Updated: 2022/12/25 11:31:47 by zasabri          ###   ########.fr       */
+/*   Updated: 2022/12/27 15:08:12 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	ft_player(t_moves *p, int l, int k)
 	int	y;
 
 	p->player = mlx_xpm_file_to_image(p->mlx, "./pic/f.xpm", &x, &y);
+	if (!p->player)
+		exit(1);
 	mlx_put_image_to_window(p->mlx, p->win, p->player, l, k);
 }
 
@@ -29,11 +31,15 @@ void	ft_zero_one(t_moves *p, char c, int l, int k)
 	if (c == '1')
 	{
 		p->wall = mlx_xpm_file_to_image(p->mlx, "./pic/wall.xpm", &x, &y);
+		if (!p->wall)
+			exit(1);
 		mlx_put_image_to_window(p->mlx, p->win, p->wall, l, k);
 	}
 	if (c == '0')
 	{
 		p->ground = mlx_xpm_file_to_image(p->mlx, "./pic/ground.xpm", &x, &y);
+		if (!p->ground)
+			exit(1);
 		mlx_put_image_to_window(p->mlx, p->win, p->ground, l, k);
 	}
 }
@@ -46,11 +52,15 @@ void	ft_coin_exit(t_moves *p, char c, int l, int k)
 	if (c == 'C')
 	{
 		p->coin = mlx_xpm_file_to_image(p->mlx, "./pic/c1.xpm", &x, &y);
+		if (!p->coin)
+			exit(1);
 		mlx_put_image_to_window(p->mlx, p->win, p->coin, l, k);
 	}
 	if (c == 'E')
 	{
 		p->exit = mlx_xpm_file_to_image(p->mlx, "./pic/c_door.xpm", &x, &y);
+		if (!p->exit)
+			exit(1);
 		mlx_put_image_to_window(p->mlx, p->win, p->exit, l, k);
 	}
 }
@@ -90,6 +100,8 @@ void	ft_graphic_map(t_moves *param, char *av)
 	char	*map_str;
 
 	map_str = ft_calloc(1, 1);
+	if (!map_str)
+		exit(0);
 	fd = open(av, O_RDONLY, 0777);
 	str = get_next_line(fd);
 	while (str)

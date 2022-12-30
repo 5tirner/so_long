@@ -6,7 +6,7 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 01:03:43 by zasabri           #+#    #+#             */
-/*   Updated: 2022/12/30 16:23:49 by zasabri          ###   ########.fr       */
+/*   Updated: 2022/12/30 18:50:27 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ int	main(int ac, char **av)
 		p.win = mlx_new_window(p.mlx, ft_width(av[1]), ft_l(av[1]), "so_long");
 		ft_graphic_map(&p, av[1]);
 		mlx_hook(p.win, 2, 0, moves, &p);
+		mlx_hook(p.win, 17, 0, quit, &p);
 		mlx_loop(p.mlx);
 	}
 	else

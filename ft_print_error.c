@@ -6,7 +6,7 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/17 04:52:06 by zasabri           #+#    #+#             */
-/*   Updated: 2022/12/23 19:13:26 by zasabri          ###   ########.fr       */
+/*   Updated: 2022/12/30 18:52:15 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,4 +19,10 @@ void	error_generat(char *av)
 	ft_printf("| %s: is invalid map        |\n", av);
 	ft_printf("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\n");
 	exit(0);
+}
+
+int	quit(void)
+{
+	exit(0);
+	return (0);
 }

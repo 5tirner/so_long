@@ -6,7 +6,7 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 02:27:42 by zasabri           #+#    #+#             */
-/*   Updated: 2022/12/30 16:20:24 by zasabri          ###   ########.fr       */
+/*   Updated: 2022/12/30 17:06:52 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,4 +90,5 @@ void	first_loop(t_moves *p, char *av);
 void	second_loop(t_moves *p, char *av);
 void	free_allocation(char **str);
 void	vals_for_flood_fill(t_pos *p);
+void	set_values_for_flood_fill(int *a, int *b, int c, int d);
 #endif

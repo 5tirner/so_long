@@ -6,7 +6,7 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/29 15:26:40 by zasabri           #+#    #+#             */
-/*   Updated: 2022/12/30 16:18:01 by zasabri          ###   ########.fr       */
+/*   Updated: 2022/12/30 17:06:04 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,4 +58,10 @@ void	vals_for_flood_fill(t_pos *p)
 	p->p = '0';
 	p->y = 'F';
 	p->z = 'E';
+}
+
+void	set_values_for_flood_fill(int *a, int *b, int c, int d)
+{
+	*a = c;
+	*b = d;
 }

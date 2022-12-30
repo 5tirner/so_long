@@ -6,7 +6,7 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/25 14:00:01 by zasabri           #+#    #+#             */
-/*   Updated: 2022/12/30 16:36:49 by zasabri          ###   ########.fr       */
+/*   Updated: 2022/12/30 17:23:22 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,67 +52,59 @@ int	p2(t_moves *p)
 	return (0);
 }
 
-void	flood_fill(char **str, t_pos s, t_pos sz)
+void	flood_fill(char **r, t_pos s, t_pos sz)
 {
 	t_pos	p;
 
 	vals_for_flood_fill(&p);
-	str[s.a][s.b] = 'F';
-	if (s.a > 0 && (str[s.a - 1][s.b] == p.o || str[s.a - 1][s.b] == p.p))
+	r[s.a][s.b] = 'F';
+	if (s.a > 0 && (r[s.a - 1][s.b] == p.o || r[s.a - 1][s.b] == p.p))
 	{
-		p.a = s.a - 1;
-		p.b = s.b;
-		flood_fill(str, p, sz);
+		set_values_for_flood_fill(&p.a, &p.b, s.a - 1, s.b);
+		flood_fill(r, p, sz);
 	}
-	if (s.a < sz.a - 1 && (str[s.a + 1][s.b] == p.o || str[s.a + 1][s.b] == p.p))
+	if (s.a < sz.a - 1 && (r[s.a + 1][s.b] == p.o || r[s.a + 1][s.b] == p.p))
 	{
-		p.a = s.a + 1;
-		p.b = s.b;
-		flood_fill(str, p, sz);
+		set_values_for_flood_fill(&p.a, &p.b, s.a + 1, s.b);
+		flood_fill(r, p, sz);
 	}
-	if (s.b < sz.b - 1 && (str[s.a][s.b + 1] == p.o || str[s.a][s.b + 1] == p.p))
+	if (s.b < sz.b - 1 && (r[s.a][s.b + 1] == p.o || r[s.a][s.b + 1] == p.p))
 	{
-		p.a = s.a;
-		p.b = s.b + 1;
-		flood_fill(str, p, sz);
+		set_values_for_flood_fill(&p.a, &p.b, s.a, s.b + 1);
+		flood_fill(r, p, sz);
 	}
-	if (s.b > 0 && (str[s.a][s.b - 1] == p.o || str[s.a][s.b - 1] == p.p))
+	if (s.b > 0 && (r[s.a][s.b - 1] == p.o || r[s.a][s.b - 1] == p.p))
 	{
-		p.a = s.a;
-		p.b = s.b - 1;
-		flood_fill(str, p, sz);
+		set_values_for_flood_fill(&p.a, &p.b, s.a, s.b - 1);
+		flood_fill(r, p, sz);
 	}
 }
 
-void	flood_fill2(char **str, t_pos s, t_pos sz)
+void	flood_fill2(char **r, t_pos s, t_pos sz)
 {
 	t_pos	p;
 
 	vals_for_flood_fill(&p);
-	str[s.a][s.b] = 'l';
-	if (s.a > 0 && (str[s.a - 1][s.b] == p.y || str[s.a - 1][s.b] == p.z))
+	r[s.a][s.b] = 'l';
+	if (s.a > 0 && (r[s.a - 1][s.b] == p.y || r[s.a - 1][s.b] == p.z))
 	{
-		p.a = s.a - 1;
-		p.b = s.b;
-		flood_fill2(str, p, sz);
+		set_values_for_flood_fill(&p.a, &p.b, s.a - 1, s.b);
+		flood_fill2(r, p, sz);
 	}
-	if (s.a < sz.a - 1 && (str[s.a + 1][s.b] == p.y || str[s.a + 1][s.b] == p.z))
+	if (s.a < sz.a - 1 && (r[s.a + 1][s.b] == p.y || r[s.a + 1][s.b] == p.z))
 	{
-		p.a = s.a + 1;
-		p.b = s.b;
-		flood_fill2(str, p, sz);
+		set_values_for_flood_fill(&p.a, &p.b, s.a + 1, s.b);
+		flood_fill2(r, p, sz);
 	}
-	if (s.b < sz.b - 1 && (str[s.a][s.b + 1] == p.y || str[s.a][s.b + 1] == p.z))
+	if (s.b < sz.b - 1 && (r[s.a][s.b + 1] == p.y || r[s.a][s.b + 1] == p.z))
 	{
-		p.a = s.a;
-		p.b = s.b + 1;
-		flood_fill2(str, p, sz);
+		set_values_for_flood_fill(&p.a, &p.b, s.a, s.b + 1);
+		flood_fill2(r, p, sz);
 	}
-	if (s.b > 0 && (str[s.a][s.b - 1] == p.y || str[s.a][s.b - 1] == p.z))
+	if (s.b > 0 && (r[s.a][s.b - 1] == p.y || r[s.a][s.b - 1] == p.z))
 	{
-		p.a = s.a;
-		p.b = s.b - 1;
-		flood_fill2(str, p, sz);
+		set_values_for_flood_fill(&p.a, &p.b, s.a, s.b - 1);
+		flood_fill2(r, p, sz);
 	}
 }
 

@@ -6,7 +6,7 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/25 14:00:01 by zasabri           #+#    #+#             */
-/*   Updated: 2022/12/29 18:14:56 by zasabri          ###   ########.fr       */
+/*   Updated: 2022/12/30 15:50:44 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -143,4 +143,5 @@ void	all_is_good(t_moves *p, char *av)
 	first_loop(p, av);
 	flood_fill2(p->map2, first_pos, size);
 	second_loop(p, av);
+	free_allocation(p->map2);
 }

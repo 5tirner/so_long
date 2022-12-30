@@ -6,7 +6,7 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 14:13:11 by zasabri           #+#    #+#             */
-/*   Updated: 2022/12/17 02:36:33 by zasabri          ###   ########.fr       */
+/*   Updated: 2022/12/29 22:32:05 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,7 @@ char	*ft_strj(char *s1, char *s2)
 	while (s2[j])
 		str[k++] = s2[j++];
 	str[k] = '\0';
+	free(s1);
 	return (str);
 }
 

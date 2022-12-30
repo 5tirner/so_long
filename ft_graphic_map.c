@@ -6,7 +6,7 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/18 04:01:35 by zasabri           #+#    #+#             */
-/*   Updated: 2022/12/27 15:08:12 by zasabri          ###   ########.fr       */
+/*   Updated: 2022/12/29 23:11:12 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,7 +107,9 @@ void	ft_graphic_map(t_moves *param, char *av)
 	while (str)
 	{
 		map_str = ft_strj(map_str, str);
+		free(str);
 		str = get_next_line(fd);
 	}
 	ft_fill_map(param, map_str);
+	free(map_str);
 }

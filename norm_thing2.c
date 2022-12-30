@@ -6,7 +6,7 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/29 15:26:40 by zasabri           #+#    #+#             */
-/*   Updated: 2022/12/29 16:18:14 by zasabri          ###   ########.fr       */
+/*   Updated: 2022/12/29 22:37:08 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,10 +50,4 @@ void	second_loop(t_moves *p, char *av)
 		}
 		i++;
 	}
-}
-
-void	flood_fill_val(int *a, int *b, int *c, int *d)
-{
-	*a = *c;
-	*b = *d;
 }

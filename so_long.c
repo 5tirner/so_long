@@ -6,7 +6,7 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 01:03:43 by zasabri           #+#    #+#             */
-/*   Updated: 2022/12/26 19:48:52 by zasabri          ###   ########.fr       */
+/*   Updated: 2022/12/29 22:30:10 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,7 @@ int	main(int ac, char **av)
 		while (p.str)
 		{
 			p.map = ft_strj(p.map, p.str);
+			free(p.str);
 			p.str = get_next_line(p.fd);
 		}
 		p.coin_nbr = coin_nbr(&p);

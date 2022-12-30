@@ -6,7 +6,7 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 02:27:42 by zasabri           #+#    #+#             */
-/*   Updated: 2022/12/29 18:11:22 by zasabri          ###   ########.fr       */
+/*   Updated: 2022/12/30 15:41:01 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,4 +84,5 @@ void	player_move3(t_moves *p, int l, int k);
 void	player_move4(t_moves *p, int l, int k);
 void	first_loop(t_moves *p, char *av);
 void	second_loop(t_moves *p, char *av);
+void	free_allocation(char **str);
 #endif

@@ -6,13 +6,13 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/22 11:24:48 by zasabri           #+#    #+#             */
-/*   Updated: 2022/12/27 15:02:40 by zasabri          ###   ########.fr       */
+/*   Updated: 2022/12/29 22:16:17 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	ft_p(t_moves *p, int l, int k, int key)
+void	ft_playeer(t_moves *p, int l, int k, int key)
 {
 	if (key == 126 || key == 13)
 		player_move1(p, l, k);
@@ -107,7 +107,7 @@ void	ft_move_in_map(t_moves *param, int key)
 	while (param->map[++i])
 	{
 		if (param->map[i] == 'P')
-			ft_p(param, param->l, param->k, key);
+			ft_playeer(param, param->l, param->k, key);
 		if (param->map[i] == 'E')
 			ft_exit(param, param->l, param->k);
 		if (param->map[i] == 'C')

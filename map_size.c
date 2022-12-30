@@ -6,7 +6,7 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/18 05:41:25 by zasabri           #+#    #+#             */
-/*   Updated: 2022/12/30 15:46:00 by zasabri          ###   ########.fr       */
+/*   Updated: 2022/12/30 17:47:47 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ int	ft_l(char *av)
 	while (str)
 	{
 		str_map = ft_strj(str_map, str);
+		free(str);
 		str = get_next_line(fd);
 	}
 	str_map2 = ft_split(str_map, '\n');

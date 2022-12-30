@@ -6,7 +6,7 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 02:27:42 by zasabri           #+#    #+#             */
-/*   Updated: 2022/12/30 15:41:01 by zasabri          ###   ########.fr       */
+/*   Updated: 2022/12/30 16:20:24 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,8 +54,12 @@ typedef struct s_vars
 
 typedef struct s_pos
 {
-	int	a;
-	int	b;
+	int		a;
+	int		b;
+	char	y;
+	char	z;
+	char	o;
+	char	p;
 }	t_pos;
 
 char	*ft_itoa(int nb);
@@ -85,4 +89,5 @@ void	player_move4(t_moves *p, int l, int k);
 void	first_loop(t_moves *p, char *av);
 void	second_loop(t_moves *p, char *av);
 void	free_allocation(char **str);
+void	vals_for_flood_fill(t_pos *p);
 #endif

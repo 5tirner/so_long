@@ -6,7 +6,7 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/29 15:26:40 by zasabri           #+#    #+#             */
-/*   Updated: 2022/12/29 22:37:08 by zasabri          ###   ########.fr       */
+/*   Updated: 2022/12/30 16:18:01 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,4 +50,12 @@ void	second_loop(t_moves *p, char *av)
 		}
 		i++;
 	}
+}
+
+void	vals_for_flood_fill(t_pos *p)
+{
+	p->o = 'C';
+	p->p = '0';
+	p->y = 'F';
+	p->z = 'E';
 }

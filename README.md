@@ -39,6 +39,6 @@ If any misconfiguration of any kind is encountered in the map file, the program 
 
 `Playing the game`\
 To play the game, run the program with a valid map file as an argument.\
-The player's goal is to collect every collectible present on the map and escape through the exit,\
-using the shortest possible route. The game will end when the player has collected all the collectibles and reached the exit,\
+The player's goal is to collect every collectible present on the map and escape through the exit, using the shortest possible route.\
+The game will end when the player has collected all the collectibles and reached the exit,\
 or when the player quits the game.
